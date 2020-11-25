@@ -1,0 +1,58 @@
+package projetojava;
+
+import javax.swing.JOptionPane;
+
+public class Projetojava {
+
+    public static void main(String[] args) {
+       
+        
+        String cod = JOptionPane.showInputDialog("Digite seu código");
+        String nome = JOptionPane.showInputDialog("Digite seu nome");
+        String empre = JOptionPane.showInputDialog("Digite sua empresa");
+
+        System.out.println("O código do funcionário: " + cod);
+        System.out.println("Nome do funcionário: " + nome);
+        System.out.println("Empresa do funcionário: " + empre);
+        
+        if(cod.equals("")){
+            JOptionPane.showMessageDialog(null,"Essas informações estão incorretas","Alerta",
+        JOptionPane.ERROR_MESSAGE);
+            return false
+        }
+        
+        if(nome.equals("")){
+            JOptionPane.showMessageDialog(null,"Essas informações estão incorretas","Alerta",
+        JOptionPane.ERROR_MESSAGE);
+            return false
+        }
+        
+        if(empre.equals("")){
+            JOptionPane.showMessageDialog(null,"Essas informações estão incorretas","Alerta",
+        JOptionPane.ERROR_MESSAGE);
+            return false
+        }
+
+        JOptionPane.showMessageDialog(null,"Olá " + nome);
+        
+        String[] entrada = {"Entrada", "Entrada do Almoço", "Saída do Almoço", "Sáida"};
+                
+        String pontos = (String) JOptionPane.showInputDialog(null,"Selecione o ponto desejado, " + nome, "Marque o seu ponto", JOptionPane.QUESTION_MESSAGE,
+                null, entrada, entrada[0]);
+        
+        System.out.println("O ponto selecionado foi: " + pontos);
+                //*empre, entra, entra_almo, saida_almo, saida;
+                
+      Object[] options = {"Sim" , "Não"};
+      
+      Object x = JOptionPane.showInputDialog(null, "Você confirma o ponto?", "Aviso", 3, null, options, "");
+      
+      if(x.equals("Sim")){
+          JOptionPane.showMessageDialog(null, "O ponto foi batido com sucesso, tenha uma ótima " + pontos);
+      }else if(x.equals("Não")){
+          JOptionPane.showMessageDialog(null, "O ponto não foi batido");
+              
+      }    
+        }
+    }
+
